@@ -1,0 +1,5 @@
+.todo-item{
+    cursor: pointer;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,9 @@
+<header>
+    <div class="header-content">
+        <div class="title">Angular Homework</div>
+        <ul>
+            <li *ngFor="let item of menuItems" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a href=""
+                    [routerLink]="item.path">{{item.title}}</a></li>
+        </ul>
+    </div>
+</header>

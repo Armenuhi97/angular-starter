@@ -1,0 +1,9 @@
+.todo-list{
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-width: 1px 1px 0;
+}
+h1{
+    text-align: center;
+}

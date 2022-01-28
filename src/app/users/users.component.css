@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+}
+.users-list{
+    width: 80%;;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-width: 1px 1px 0;
+
+}
+.user-item{
+    cursor: pointer;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
