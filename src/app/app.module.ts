@@ -18,7 +18,6 @@ import { UserService } from './services/user.service';
 @NgModule({
   declarations: [
     AppComponent,
-
     LoginComponent,
     RegistrationComponent,
     LoadingComponent,

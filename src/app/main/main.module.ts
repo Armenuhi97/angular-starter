@@ -8,6 +8,8 @@ import { ToDoItemComponent } from '../to-do-list/to-do-item/to-do-item.component
 import { UserItemComponent } from '../users/user-item/user-item.component';
 import { MainRoutingModule } from './main-routing.module';
 import { HomeComponent } from '../home/home.component';
+import { FormsModule } from '@angular/forms';
+import { SearchPipe } from '../pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,13 @@ import { HomeComponent } from '../home/home.component';
     ToDoItemComponent,
     UserItemComponent,
     MainComponent,
-    HomeComponent
+    HomeComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
     MainRoutingModule,
+    FormsModule
   ],
   exports: [MainComponent]
 })

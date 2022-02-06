@@ -1,10 +1,17 @@
 h1{
     text-align: center;
 }
+.users-content{
+    width: 80%;
+    margin: 0 auto;
+}
 .users-list{
-    width: 80%;;
+    
     margin: 10px auto;
     border: 1px solid #ccc;
     border-width: 1px 1px 0;
 
+}
+input{
+    padding: 5px;
 }

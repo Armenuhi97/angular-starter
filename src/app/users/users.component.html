@@ -1,4 +1,7 @@
-<h1>Users</h1>
-<div class="users-list">
-    <app-user-item *ngFor="let user of usersList.values" [user]="user"></app-user-item>
+<div class="users-content">
+    <h1>Users</h1>
+    <input type="text" placeholder="Search users" [(ngModel)]="searchValue" />
+    <div class="users-list">
+        <app-user-item *ngFor="let user of usersList.values | search:searchValue " [user]="user"></app-user-item>
+    </div>
 </div>
