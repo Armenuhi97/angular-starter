@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MyList, Todo } from '../models/data';
+import { MyList } from '../models/my-list.model';
+import { Todo } from '../models/todo.model';
 
 @Component({
   selector: 'app-to-do-list',
@@ -7,16 +8,24 @@ import { MyList, Todo } from '../models/data';
   styleUrls: ['./to-do-list.component.css']
 })
 export class ToDoListComponent implements OnInit {
-  public list = new MyList<Todo>();
+  public list = new MyList<Todo>([
+    {
+      id: 1,
+      title: 'Todo1',
+    },
+    {
+      id: 2,
+      title: 'Todo2',
+    },
+    {
+      id: 3,
+      title: 'Todo3',
+    },
+  ]);
 
   constructor() { }
 
   ngOnInit(): void {
-    this.initValues();
   }
-  private initValues(): void {
-    for (let i = 1; i <= 5; i++) {
-      this.list.add(new Todo(i, `Todo item ${i}`));
-    }
-  }
+
 }

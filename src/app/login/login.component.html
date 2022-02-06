@@ -1,0 +1,30 @@
+<app-loading *ngIf="isShowLoading"></app-loading>
+
+<div class="login-content">
+    <div class="login-item">
+        <h1>Login</h1>
+        <form (ngSubmit)="login()" action="" [formGroup]="loginForm">
+            <div><input placeholder="email" name="email" id="email" type="email" formControlName="email"></div>
+            <span class="error"
+                *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">Email is
+                required</span>
+            <span class="error"
+                *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">Enter validate
+                email</span>
+            <div><input placeholder="password" name="password" type="password" formControlName="password"></div>
+            <span class="error"
+                *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">Password
+                is required</span>
+            <span class="error"
+                *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched">Min
+                length
+                is {{loginForm.controls['password'].getError('minlength').requiredLength}}</span>
+
+            <button class="login-btn">Login</button>
+
+        </form>
+        <button routerLink="/registration" class="register-btn">Register</button>
+        <div *ngIf="erroMessage" class="error">{{erroMessage}}</div>
+
+    </div>
+</div>

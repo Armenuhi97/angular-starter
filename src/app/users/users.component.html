@@ -1,12 +1,4 @@
 <h1>Users</h1>
 <div class="users-list">
-    <div (click)="openTodoList(user)" class="user-item" *ngFor="let user of usersList.values ">
-        <div> {{user.id}} - {{user.name}}, total todo items {{user.todoList.values.length}}
-        </div>
-        <div class="todo-list" *ngIf="user.isOpened">
-            <h1>ToDo List</h1>
-            <div *ngIf="!user.todoList.values.length">No items</div>
-            <app-to-do-item *ngFor="let item of user.todoList.values" [item]="item"></app-to-do-item>
-        </div>
-    </div>
+    <app-user-item *ngFor="let user of usersList.values" [user]="user"></app-user-item>
 </div>

@@ -1,30 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { MyList, Todo, User } from '../models/data'
+import { MyList } from '../models/my-list.model';
+import { Todo } from '../models/todo.model';
+import { User } from '../models/user.model';
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  public usersList = new MyList<User>();
-  constructor() { }
+  public usersList = new MyList<User>([]);
+
+  constructor(private userService: UserService) {
+    this.usersList = this.userService.getUsersList();
+  }
 
   ngOnInit(): void {
-    this.initValues();
-  }
-  private initValues():void {
-    for (let i = 1; i <= 10; i++) {
-      this.usersList.add(new User(i, `User ${i}`, new MyList<Todo>(), false));
-    }
-    let user1 = this.usersList.findById(1);
-    let user2 = this.usersList.findById(2);
-    for (let i = 1; i <= 5; i++) {
-      user1?.todoList.add(new Todo(i, `Todo item ${i}`));
-      user2?.todoList.add(new Todo(i, `Todo item ${i}`));
-    }
-  }
-  public openTodoList(item: User): void {
-    item.isOpened = !item.isOpened;
   }
 
 }

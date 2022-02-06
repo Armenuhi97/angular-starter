@@ -1,21 +1,5 @@
-export interface IWithIdentity {
-    id: number;
-}
-
-export class User implements IWithIdentity {
-    constructor(
-        public id: number,
-        public name: string,
-        public todoList: MyList<Todo>,
-        public isOpened:boolean
-    ) {
-    }
-}
-
-export class Todo implements IWithIdentity {
-    constructor(public id: number, public title: string) {
-    }
-}
+import { IWithIdentity } from "./identity.model";
+import { User } from "./user.model";
 
 export class MyList<T extends IWithIdentity> {
     // best option - use Map
@@ -34,14 +18,11 @@ export class MyList<T extends IWithIdentity> {
     public findById(id: number): T | null {
         return this.values.find((item) => item.id === id) || null;
     }
-
+    
     public deleteById(id: number): boolean {
         const lengthBeforeDelete = this.values.length;
 
         this.values = this.values.filter((item) => item.id === id);
         return lengthBeforeDelete === this.values.length;
-    }
-    public getValue() {
-        return this.values
     }
 }

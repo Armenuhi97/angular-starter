@@ -8,7 +8,7 @@ import { IMenu } from '../models/menu.model';
 })
 export class HeaderComponent implements OnInit {
   public menuItems: IMenu[] = [
-    { title: 'Home', path: '/' },
+    { title: 'Home', path: '/home' },
     { title: 'Users', path: '/users' },
     { title: 'Todo list', path: '/to-do-list' },
 

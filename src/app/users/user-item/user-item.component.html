@@ -1,0 +1,10 @@
+
+<div (click)="openCloseToDoList()" class="user-item" >
+    <div> {{user?.id}} - {{user?.firstName}} {{user?.lastName}}, total todo items {{user?.todoList?.values?.length}}
+    </div>
+    <div class="todo-list" *ngIf="isOpened">
+        <h5>Todo List</h5>
+        <div *ngIf="!user?.todoList?.values?.length">No items</div>
+        <app-to-do-item *ngFor="let item of user?.todoList?.values" [item]="item"></app-to-do-item>
+    </div>
+</div>
